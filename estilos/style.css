@@ -35,7 +35,7 @@
       color:var(--text);
       background:var(--sand);
       line-height:1.7;
-      font-size:16px;
+      font-size: 1em;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
@@ -57,17 +57,6 @@
       padding:0 24px;
     }
 
-    .eyebrow{
-      font-family:var(--font-sans);
-      font-size:11px;
-      letter-spacing:0.32em;
-      text-transform:uppercase;
-      color:var(--gold);
-      font-weight:500;
-      margin-bottom:18px;
-      display:inline-block;
-    }
-
     .divider{
       width:60px; height:1px;
       background:var(--gold);
@@ -77,6 +66,7 @@
 
     /* ================ CTA ================ */
     .cta{
+      text-align:center;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -128,12 +118,13 @@
       padding:28px 0;
     }
     .site-header .container{
-      display:flex; justify-content:space-between; align-items:center;
+      display:flex; justify-content:center; align-items:center;
     }
     .brand{
+      text-align:center;
       font-family:var(--font-serif);
-      font-size:20px;
-      letter-spacing:0.42em;
+      font-size: 2.5em;
+      letter-spacing:0.0em;
       color:var(--espresso);
       font-weight:500;
     }
@@ -144,7 +135,7 @@
       letter-spacing:0.3em;
       color:var(--text-soft);
       font-weight:400;
-      margin-top:4px;
+      text-align:center;
     }
     .header-meta{
       font-family:var(--font-sans);
@@ -159,7 +150,7 @@
     .hero{
       position:relative;
       min-height:100vh;
-      padding:140px 0 80px;
+      padding:200px 0 80px;
       background:
         radial-gradient(ellipse at top right, rgba(184,107,75,0.10), transparent 60%),
         linear-gradient(180deg, #f7f0e5 0%, var(--sand) 100%);
@@ -181,6 +172,7 @@
       align-items:center;
     }
     .hero h1{
+        text-align:center;
       font-size:clamp(34px, 6vw, 62px);
       font-weight:500;
       margin-bottom:24px;
@@ -206,8 +198,9 @@
       margin-bottom:36px;
     }
     .hero-trust{
+      text-align:center;
       margin-top:32px;
-      font-size:11px;
+      font-size:0.5em;
       letter-spacing:0.25em;
       text-transform:uppercase;
       color:var(--text-soft);
@@ -326,7 +319,6 @@
       color:var(--offwhite);
     }
     .enemy h2, .enemy h3{ color:var(--offwhite); }
-    .enemy .eyebrow{ color:var(--gold-soft); }
     .enemy .section-sub{ color:rgba(250,248,245,0.7); }
 
     .enemy-grid{
