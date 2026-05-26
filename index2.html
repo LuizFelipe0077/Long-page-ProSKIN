@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="color-scheme: light only;">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="light only"/>
+<meta name="description" content="PROSKIN — Prevenção Integrativa de Estrias na Gestação. Método científico criado por Nicole Carvalho, Biomédica especialista em Estética Integrativa."/>
+<meta name="theme-color" content="#F7F2EC"/>
+<title>PROSKIN — Prevenção Integrativa de Estrias na Gestação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+
+<style>
+/* ============================================================
+   TOKENS
+============================================================ */
+:root {
+  color-scheme: light only;
+  --c-bg:        #F7F2EC;
+  --c-bg2:       #EFE8DC;
+  --c-bg3:       #E8DECE;
+  --c-dark:      #2A1F14;
+  --c-mid:       #5C4A38;
+  --c-muted:     #8C7A68;
+  --c-gold:      #B89A6E;
+  --c-gold-lt:   #D4BFA0;
+  --c-gold-pale: #F0E8D8;
+  --c-cream:     #FAF7F2;
+  --c-white:     #FFFFFF;
+  --c-dark-rich: #1C1108;
+  --ff-head:     'Cormorant', Georgia, serif;
+  --ff-body:     'DM Sans', system-ui, sans-serif;
+  --ease:        cubic-bezier(.25,.46,.45,.94);
+  --r:           6px;
+}
+
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--c-bg) !important;
+  color: var(--c-dark) !important;
+  font-family: var(--ff-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a  { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   LAYOUT
+============================================================ */
+.wrap      { width: 100%; max-width: 860px; margin: 0 auto; padding: 0 24px; }
+.wrap--lg  { max-width: 1080px; }
+.wrap--sm  { max-width: 640px; }
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+h1,h2,h3,h4 { font-family: var(--ff-head); font-weight: 400; line-height: 1.15; }
+p { line-height: 1.85; color: var(--c-mid); }
+
+.kicker {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: 14px;
+}
+.rule {
+  display: block;
+  width: 40px; height: 1px;
+  background: var(--c-gold);
+  margin: 20px auto 28px;
+}
+.rule--left { margin-left: 0; }
+.rule--white { background: rgba(255,255,255,0.3); }
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+@keyframes btn-glow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(184,154,110,.38); }
+  50%      { box-shadow: 0 0 0 18px rgba(184,154,110,0); }
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--c-gold);
+  color: var(--c-dark-rich) !important;
+  font-family: var(--ff-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 18px 44px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  animation: btn-glow 2.8s ease-in-out infinite;
+  transition: background .25s, transform .2s;
+  text-decoration: none;
+}
+.btn:hover  { background: #9E845A; transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn--lg    { font-size: 13px; padding: 22px 52px; }
+.btn svg    { flex-shrink: 0; }
+
+/* ============================================================
+   REVEAL ANIMATION
+============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+}
+.reveal.on { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .22s; }
+.reveal-d3 { transition-delay: .34s; }
+
+/* ============================================================
+   COUNTER ANIMATION
+============================================================ */
+.count-val { font-family: var(--ff-head); }
+
+/* ============================================================
+   SECTION SPACING
+============================================================ */
+.sec  { padding: 88px 0; }
+.sec--sm { padding: 56px 0; }
+.sec--dark {
+  background: var(--c-dark-rich);
+  color: var(--c-cream);
+}
+.sec--dark h2,
+.sec--dark h3,
+.sec--dark h4 { color: var(--c-cream); }
+.sec--dark p  { color: rgba(240,232,216,.75); }
+.sec--dark .kicker { color: var(--c-gold-lt); }
+
+.sec--warm { background: var(--c-bg2); }
+.sec--pale { background: var(--c-gold-pale); }
+.sec--rich { background: #2A1F14; }
+
+/* ============================================================
+   1. HERO
+============================================================ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(168deg, #1C1108 0%, #2A1F14 40%, #3D2C1C 70%, #5C3D20 100%);
+  overflow: hidden;
+}
+.hero::before {
+  content:'';
+  position: absolute; inset:0;
+  background: radial-gradient(ellipse 70% 50% at 80% 30%, rgba(184,154,110,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+/* grain */
+.hero::after {
+  content:'';
+  position: absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  pointer-events: none; z-index:0;
+}
+
+.hero-body {
+  position: relative; z-index:1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 100px 24px 72px;
+}
+
+.hero-content { max-width: 760px; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.hero-eyebrow-line {
+  width: 32px; height: 1px;
+  background: var(--c-gold);
+}
+.hero-eyebrow-text {
+  font-family: var(--ff-body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  color: #FAF7F2;
+  line-height: 1.1;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--c-gold-lt);
+  font-weight: 400;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(240,232,216,.7);
+  line-height: 1.75;
+  max-width: 560px;
+  margin-bottom: 44px;
+}
+
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: rgba(212,191,160,.55);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+}
+.hero-trust-dot {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: rgba(212,191,160,.3);
+}
+
+/* image panel */
+.hero-img-panel {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 38%;
+  overflow: hidden;
+}
+.hero-img-panel img,
+.hero-img-panel .img-ph {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero-img-panel .img-ph {
+  background: linear-gradient(180deg, rgba(90,55,25,.5) 0%, rgba(44,31,20,.9) 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px;
+  color: rgba(212,191,160,.35);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+}
+.hero-img-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(28,17,8,1) 0%, rgba(28,17,8,0) 35%);
+}
+
+/* scroll arrow */
+.hero-scroll {
+  position: absolute;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px;
+}
+.hero-scroll span {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(212,191,160,.3);
+  font-family: var(--ff-body);
+}
+@keyframes arr {
+  0%,100% { transform: translateY(0); }
+  55%     { transform: translateY(7px); }
+}
+.hero-scroll svg { animation: arr 1.7s ease-in-out infinite; }
+
+/* ============================================================
+   IMPACT STRIP (Container 1 — frase impactante)
+============================================================ */
+.impact-strip {
+  background: var(--c-gold-pale);
+  border-top: 1px solid rgba(184,154,110,.2);
+  border-bottom: 1px solid rgba(184,154,110,.2);
+  padding: 64px 24px;
+  text-align: center;
+}
+.impact-strip blockquote {
+  font-family: var(--ff-head);
+  font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--c-dark);
+  line-height: 1.3;
+  max-width: 720px;
+  margin: 0 auto 20px;
+}
+.impact-strip blockquote strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--c-gold);
+}
+.impact-strip p {
+  font-size: .95rem;
+  color: var(--c-muted);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   DOR (Container 2)
+============================================================ */
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 52px;
+}
+.pain-card {
+  background: var(--c-bg2);
+  padding: 40px 32px;
+  position: relative;
+}
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--c-gold);
+  opacity: .5;
+}
+.pain-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+.pain-card p {
+  font-size: .95rem;
+  line-height: 1.8;
+}
+
+/* Image placeholder — gestante aesthetic */
+.img-ph-gestante {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--c-bg3) 0%, var(--c-bg2) 100%);
+  border: 1px solid rgba(184,154,110,.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--c-gold-lt);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+  border-radius: var(--r);
+}
+.img-ph-gestante svg { opacity: .4; }
+
+/* ============================================================
+   STATS ROW
+============================================================ */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1px;
+  background: rgba(184,154,110,.15);
+  margin: 56px 0 0;
+}
+.stat-cell {
+  background: var(--c-cream);
+  padding: 36px 20px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--ff-head);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  color: var(--c-gold);
+  display: block;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-desc {
+  font-size: 11px;
+  color: var(--c-muted);
+  letter-spacing: 0.1em;
+  line-height: 1.55;
+  font-family: var(--ff-body);
+}
+.stat-source {
+  display: block;
+  font-size: 9px;
+  color: rgba(140,122,104,.45);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ============================================================
+   PARADIGMA
+============================================================ */
+.paradigm-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 48px;
+}
+.paradigm-cols h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 20px;
+  color: var(--c-cream);
+}
+.paradigm-cols p { font-size: .97rem; }
+
+.factor-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+.factor-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: .93rem;
+  color: rgba(240,232,216,.75);
+  line-height: 1.65;
+}
+.factor-num {
+  font-family: var(--ff-head);
+  font-size: 1.6rem;
+  color: var(--c-gold);
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+.factor-text strong {
+  display: block;
+  font-family: var(--ff-head);
+  font-size: 1.05rem;
+  color: var(--c-cream);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.curiosity-box {
+  background: rgba(184,154,110,.08);
+  border: 1px solid rgba(184,154,110,.2);
+  border-radius: var(--r);
+  padding: 32px 28px;
+  margin-top: 24px;
+}
+.curiosity-box p {
+  font-family: var(--ff-head);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(240,232,216,.8);
+  line-height: 1.65;
+  text-indent: 0;
+}
+.curiosity-box p + p { margin-top: 14px; }
+
+/* ============================================================
+   AUTORIDADE
+============================================================ */
+.authority-wrap {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.authority-photo-ph {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--c-bg3);
+  border: 1px solid rgba(184,154,110,.2);
+  border-radius: var(--r);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--c-gold-lt);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+  position: relative;
+}
+.authority-photo-ph::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; right: -10px;
+  width: 64px; height: 64px;
+  border-right: 1px solid rgba(184,154,110,.25);
+  border-bottom: 1px solid rgba(184,154,110,.25);
+}
+.authority-photo-ph svg { opacity: .35; }
+
+.authority-name {
+  font-size: clamp(2rem,4.5vw,3.2rem);
+  margin-bottom: 4px;
+}
+.authority-role {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  font-family: var(--ff-body);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.authority-cred {
+  display: block;
+  font-size: 10px;
+  color: var(--c-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+  margin-bottom: 24px;
+}
+.authority-text p {
+  font-size: .97rem;
+  line-height: 1.85;
+  text-align: justify;
+}
+.authority-text p + p { margin-top: 14px; }
+
+.badge-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.badge {
+  border: 1px solid rgba(184,154,110,.3);
+  padding: 5px 14px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  font-family: var(--ff-body);
+}
+
+/* ============================================================
+   DOSSIE — FAQ curiosidade
+============================================================ */
+.dossie-intro {
+  max-width: 660px;
+  margin: 0 auto;
+  text-align: center;
+}
+.dossie-intro h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.questions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 52px;
+}
+.q-card {
+  background: var(--c-cream);
+  border: 1px solid rgba(184,154,110,.15);
+  border-radius: var(--r);
+  padding: 32px 28px;
+  cursor: pointer;
+  transition: border-color .3s, transform .3s;
+  position: relative;
+  overflow: hidden;
+}
+.q-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--c-gold), transparent);
+  transform: translateX(-100%);
+  transition: transform .4s;
+}
+.q-card:hover { border-color: rgba(184,154,110,.4); transform: translateY(-3px); }
+.q-card:hover::before { transform: translateX(0); }
+.q-card-icon {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(184,154,110,.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--c-gold);
+}
+.q-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.q-card p {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--c-muted);
+}
+.q-card .reveal-answer {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(184,154,110,.15);
+  font-size: .88rem;
+  color: var(--c-mid);
+  line-height: 1.75;
+}
+.q-card.open .reveal-answer { display: block; }
+.q-card-toggle {
+  position: absolute;
+  top: 20px; right: 20px;
+  font-size: 20px;
+  color: var(--c-gold-lt);
+  line-height: 1;
+  transition: transform .3s;
+  font-family: var(--ff-body);
+  font-weight: 300;
+}
+.q-card.open .q-card-toggle { transform: rotate(45deg); }
+
+/* ============================================================
+   SOLUÇÃO / EBOOK
+============================================================ */
+.ebook-section { background: var(--c-bg2); }
+
+.ebook-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+/* CAPA EBOOK 3D */
+.ebook-cover {
+  position: relative;
+}
+.ebook-3d-wrap {
+  position: relative;
+  transform: perspective(900px) rotateY(-12deg) rotateX(3deg);
+  transform-style: preserve-3d;
+  transition: transform .5s var(--ease);
+  max-width: 300px;
+  margin: 0 auto;
+}
+.ebook-3d-wrap:hover {
+  transform: perspective(900px) rotateY(-6deg) rotateX(1deg);
+}
+.ebook-face {
+  background: linear-gradient(145deg, #2A1F14 0%, #3D2C1C 50%, #1C1108 100%);
+  border-radius: 4px 10px 10px 4px;
+  padding: 0;
+  aspect-ratio: 3/4;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow:
+    -8px 0 0 rgba(0,0,0,.35),
+    -16px 8px 24px rgba(0,0,0,.45),
+    4px 4px 24px rgba(0,0,0,.3),
+    inset 0 0 60px rgba(184,154,110,.04);
+  overflow: hidden;
+}
+.ebook-face::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(184,154,110,.08) 0%, transparent 60%);
+}
+.ebook-face-inner {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 32px 24px;
+}
+.ebook-face-inner .ebook-tag {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+  margin-bottom: 18px;
+  font-family: var(--ff-body);
+}
+.ebook-face-inner h3 {
+  font-size: 1.5rem;
+  color: #FAF7F2;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.ebook-face-inner p {
+  font-size: .82rem;
+  color: rgba(212,191,160,.6);
+  line-height: 1.5;
+  text-align: center;
+}
+.ebook-face-deco {
+  width: 40px; height: 1px;
+  background: var(--c-gold);
+  margin: 16px auto;
+  opacity: .5;
+}
+
+/* spine */
+.ebook-spine {
+  position: absolute;
+  left: -8px; top: 0; bottom: 0;
+  width: 8px;
+  background: linear-gradient(180deg, #3D2C1C, #1C1108);
+  border-radius: 4px 0 0 4px;
+  transform: rotateY(-90deg);
+  transform-origin: right;
+}
+
+.ebook-badge {
+  position: absolute;
+  top: -14px; right: -14px;
+  width: 72px; height: 72px;
+  background: var(--c-gold);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--ff-body);
+  box-shadow: 0 4px 16px rgba(184,154,110,.4);
+}
+.ebook-badge span:first-child {
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(42,31,20,.7);
+  line-height: 1;
+}
+.ebook-badge span:last-child {
+  font-family: var(--ff-head);
+  font-size: 1.4rem;
+  color: var(--c-dark-rich);
+  line-height: 1;
+}
+
+/* contents list */
+.content-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.content-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(184,154,110,.12);
+}
+.content-item:last-child { border-bottom: none; }
+.content-num {
+  font-family: var(--ff-head);
+  font-size: 1.8rem;
+  color: rgba(184,154,110,.2);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: right;
+}
+.content-body strong {
+  display: block;
+  font-family: var(--ff-head);
+  font-size: 1.05rem;
+  color: var(--c-dark);
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.content-body span {
+  font-size: .88rem;
+  color: var(--c-muted);
+  line-height: 1.6;
+}
+
+/* bonus box */
+.bonus-box {
+  background: var(--c-dark);
+  border-radius: var(--r);
+  padding: 32px 28px;
+  margin-top: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.bonus-box::before {
+  content: 'BÓNUS';
+  position: absolute;
+  top: 14px; right: -22px;
+  background: var(--c-gold);
+  color: var(--c-dark-rich);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  padding: 5px 36px;
+  transform: rotate(45deg);
+  font-family: var(--ff-body);
+}
+.bonus-box h4 {
+  font-size: 1.25rem;
+  color: var(--c-cream);
+  margin-bottom: 8px;
+}
+.bonus-box p {
+  font-size: .9rem;
+  color: rgba(212,191,160,.7);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   QUEM É / NÃO É
+============================================================ */
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.who-card {
+  border-radius: var(--r);
+  padding: 36px 30px;
+  background: var(--c-cream);
+}
+.who-card--no  { border-top: 3px solid #8B6347; }
+.who-card--yes { border-top: 3px solid #5C7A5A; }
+.who-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+  margin-bottom: 22px;
+}
+.who-card--no  .who-card-head { color: #8B6347; }
+.who-card--yes .who-card-head { color: #5C7A5A; }
+.who-card-ico {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.who-card--no  .who-card-ico { background: rgba(139,99,71,.12); }
+.who-card--yes .who-card-ico { background: rgba(92,122,90,.12); }
+.who-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.who-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: .91rem; line-height: 1.6; color: var(--c-mid);
+}
+.who-list .mk { flex-shrink: 0; margin-top: 1px; font-size: 13px; }
+.who-card--no  .mk { color: #8B6347; }
+.who-card--yes .mk { color: #5C7A5A; }
+
+/* ============================================================
+   OFERTA
+============================================================ */
+.offer-sec {
+  background: linear-gradient(150deg, #1C1108 0%, #2A1F14 50%, #3D2C1C 100%);
+  position: relative;
+  overflow: hidden;
+}
+.offer-sec::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,154,110,.06);
+  pointer-events: none;
+}
+.offer-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(184,154,110,.15);
+  border-radius: var(--r);
+  padding: 56px 48px;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+.offer-pill {
+  display: inline-block;
+  background: rgba(184,154,110,.15);
+  border: 1px solid rgba(184,154,110,.3);
+  color: var(--c-gold-lt);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-bottom: 28px;
+  font-family: var(--ff-body);
+}
+.offer-card h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  color: var(--c-cream);
+  margin-bottom: 14px;
+}
+.offer-card > p {
+  color: rgba(212,191,160,.7);
+  font-size: .97rem;
+  max-width: 480px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+}
+.price-from {
+  font-size: .95rem;
+  color: rgba(212,191,160,.35);
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--ff-body);
+}
+.price-main {
+  font-family: var(--ff-head);
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--c-cream);
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.price-note {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(212,191,160,.4);
+  display: block;
+  margin-bottom: 32px;
+  font-family: var(--ff-body);
+}
+.scarcity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 18px;
+  font-size: 10px;
+  color: rgba(212,191,160,.4);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--ff-body);
+}
+.scarcity-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--c-gold);
+  opacity: .6;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: .6; }
+  50%      { opacity: .15; }
+}
+
+.trust-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(212,191,160,.35);
+  font-family: var(--ff-body);
+}
+
+/* ============================================================
+   DISCLAIMER
+============================================================ */
+.disclaimer {
+  background: var(--c-bg2);
+  padding: 40px 24px;
+  text-align: center;
+}
+.disclaimer p {
+  font-size: .82rem;
+  color: var(--c-muted);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer {
+  background: #1C1108;
+  padding: 48px 24px 32px;
+}
+.footer-in {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.footer-brand p:first-child {
+  font-family: var(--ff-head);
+  font-size: 1.1rem;
+  letter-spacing: 0.22em;
+  color: rgba(250,247,242,.88);
+}
+.footer-brand p:last-child {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(212,191,160,.38);
+  margin-top: 4px;
+  font-family: var(--ff-body);
+}
+.footer-legal {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(212,191,160,.35);
+  line-height: 1.7;
+  font-family: var(--ff-body);
+  font-style: normal;
+}
+.footer-right p:first-child {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(212,191,160,.25);
+  font-family: var(--ff-body);
+}
+.footer-right p:last-child {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(212,191,160,.16);
+  margin-top: 4px;
+  font-family: var(--ff-body);
+}
+.footer-rule {
+  max-width: 1080px;
+  margin: 28px auto 16px;
+  height: 1px;
+  background: rgba(212,191,160,.07);
+}
+.footer-bottom {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(212,191,160,.16);
+  font-family: var(--ff-body);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 768px) {
+  .sec { padding: 64px 0; }
+  .hero-img-panel { display: none; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-body { padding-top: 80px; padding-bottom: 56px; }
+  .hero-content { max-width: 100%; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr; gap: 1px; }
+  .paradigm-cols { grid-template-columns: 1fr; gap: 36px; }
+  .authority-wrap { grid-template-columns: 1fr; gap: 36px; }
+  .authority-photo-ph { max-width: 260px; margin: 0 auto; }
+  .authority-photo-ph::after { display: none; }
+  .questions-grid { grid-template-columns: 1fr; }
+  .ebook-grid { grid-template-columns: 1fr; gap: 40px; }
+  .ebook-3d-wrap { max-width: 220px; }
+  .who-grid { grid-template-columns: 1fr; }
+  .offer-card { padding: 36px 20px; }
+  .footer-in { flex-direction: column; text-align: center; }
+  .footer-right { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+  1. HERO
+════════════════════════════════════════ -->
+<header class="hero" role="banner">
+
+  <!-- imagem lateral desktop -->
+  <div class="hero-img-panel" aria-hidden="true">
+    <div class="img-ph">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-1a6 6 0 0112 0v1"/><ellipse cx="12" cy="16" rx="5" ry="3"/></svg>
+      <span>Foto Gestante<br/>Aesthetic</span>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-content">
+
+      <div class="hero-eyebrow reveal">
+        <span class="hero-eyebrow-line"></span>
+        <span class="hero-eyebrow-text">Prevenção Integrativa de Estrias na Gestação</span>
+      </div>
+
+      <h1 class="reveal reveal-d1">
+       Quando você compreende o código biológico da própria pele,<br/> 
+        <em>prevenir deixa de ser uma tentativa.</em>
+      </h1>
+
+      <p class="hero-sub reveal reveal-d2">
+        Existe uma diferença enorme entre hidratar a pele e realmente protegê-la. 
+        Descubra o que acontece dentro do seu corpo e o que a maioria das grávidas 
+        nunca soube que precisava fazer.
+      </p>
+
+      <a href="[INSERIR_LINK_AQUI]" class="btn reveal reveal-d3" aria-label="Adquirir o PROSKIN">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        QUERO PROTEGER A MINHA PELE
+      </a>
+
+      <div class="hero-trust reveal">
+        <span class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          100% seguro para gestantes
+        </span>
+        <span class="hero-trust-dot" aria-hidden="true"></span>
+        <span class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Acesso imediato
+        </span>
+        <span class="hero-trust-dot" aria-hidden="true"></span>
+        <span class="hero-trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 5v7m0 3h.01"/></svg>
+          Base científica validada
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Continuar</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(212,191,160,.35)" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+
+</header>
+
+<main>
+
+<!-- ════════════════════════════════════════
+  FRASE DE IMPACTO — Container 1
+════════════════════════════════════════ -->
+<div class="impact-strip reveal">
+  <div class="wrap wrap--sm">
+    <span class="kicker">O ponto de virada</span>
+    <blockquote>
+      Quando você compreende o <strong>código biológico</strong> do seu próprio corpo, a prevenção deixa de ser uma tentativa — e torna-se uma <strong>certeza fundamentada.</strong>
+    </blockquote>
+    <p>Esta é a base do que você vai aprender. Não dicas rasas. Não promessas. Ciência real, explicada de forma que qualquer mãe consiga entender e aplicar.</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+  2. A DOR — Container 2
+════════════════════════════════════════ -->
+<section class="sec sec--warm" aria-labelledby="pain-title">
+  <div class="wrap wrap--lg">
+
+    <div class="text-center reveal">
+      <span class="kicker">Eu sei o que você está sentindo</span>
+      <h2 id="pain-title" style="font-size:clamp(1.8rem,4vw,3rem); max-width:620px; margin:0 auto;">
+        Fez tudo "certo".<br/>E ainda assim…
+      </h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <h3>Mãe pela segunda vez... <em>e apavorada.</em></h3>
+        <p>Na primeira gravidez você bebeu água, passou o óleo mais caro que encontrou, seguiu cada conselho. Mesmo assim as marcas apareceram. Agora, grávida de novo, bate aquela angústia: <em>"Será que desta vez vai ser diferente?"</em></p>
+        <p style="margin-top:12px;">A resposta pode ser SIM, mas não com as mesmas estratégias de antes.</p>
+      </div>
+      <div class="pain-card reveal reveal-d1">
+        <h3>Primeira gravidez... <em>confusa com tanta informação.</em></h3>
+        <p>A internet está cheia de indicações. Óleo de amêndoas, manteiga de karité, ácido hialurônico, colágeno... Você não sabe em quem confiar. E a verdade é que ninguém ainda te explicou <em>por que</em> as estrias realmente aparecem.</p>
+        <p style="margin-top:12px;">Isso não é culpa sua. É falta de informação real.</p>
+      </div>
+    </div>
+
+    <!-- imagem aesthetic gestante -->
+    <div class="reveal" style="margin-top:48px;">
+      <div class="img-ph-gestante" style="aspect-ratio:21/7; max-width:100%;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><ellipse cx="12" cy="17" rx="5" ry="4"/></svg>
+        <span>Imagem Aesthetic — Gestantes</span>
+      </div>
+    </div>
+
+    <!-- Stats reais -->
+    <div class="stats-row reveal">
+      <div class="stat-cell">
+        <span class="stat-num count-val" data-target="75">0</span><span class="stat-num" style="font-size:2rem;">%</span>
+        <p class="stat-desc">das grávidas desenvolvem estrias em algum grau
+          <span class="stat-source">Fonte: Chang et al., Journal of the American Academy of Dermatology, 2004</span>
+        </p>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num count-val" data-target="3">0</span><span class="stat-num" style="font-size:2rem;">×</span>
+        <p class="stat-desc">mais difícil tratar uma estria formada do que prevenir o seu aparecimento
+          <span class="stat-source">Consenso clínico em dermatologia estética</span>
+        </p>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-num count-val" data-target="90">0</span><span class="stat-num" style="font-size:2rem;">%</span>
+        <p class="stat-desc">dos cremes populares para gestantes contêm ingredientes com potencial irritante ou disruptivo
+          <span class="stat-source">Análise de ingredientes — EWG Skin Deep Database</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  3. QUEBRA DE PARADIGMA
+════════════════════════════════════════ -->
+<section class="sec sec--dark" aria-labelledby="paradigm-title">
+  <div class="wrap wrap--lg">
+    <div class="paradigm-cols">
+
+      <div class="reveal">
+        <span class="kicker">O que ninguém te contou</span>
+        <h2 id="paradigm-title">Hidratar a pele por fora resolve apenas <em>uma parte</em> do problema.</h2>
+        <div class="rule rule--left rule--white" style="background:rgba(184,154,110,.35);"></div>
+        <p>O estiramento da pele durante a gravidez é o gatilho mais visível, mas está longe de ser o único fator. O que realmente decide se as marcas aparecem ou não acontece <strong style="color:var(--c-gold-lt);">dentro do seu corpo</strong>, muito antes de qualquer esticada.</p>
+        <p style="margin-top:14px;">Três processos internos silenciosos enfraquecem a estrutura da sua pele sem que você perceba:</p>
+
+        <ul class="factor-list">
+          <li>
+            <span class="factor-num">01</span>
+            <span class="factor-text">
+              <strong>Inflamação silenciosa</strong>
+              Há um processo inflamatório sistêmico que começa semanas antes de qualquer marca aparecer. Ele não dói, não coça e não tem sintoma visível. E é exatamente aí que a prevenção real precisa acontecer, no nível celular, não na superfície.
+
+            </span>
+          </li>
+          <li>
+            <span class="factor-num">02</span>
+            <span class="factor-text">
+              <strong>Picos de cortisol elevado</strong>
+              O estresse da gestação aumenta o cortisol, um hormônio que, em excesso, literalmente degrada as fibras da pele. Quanto mais estresse, menos resistência, mais estrias.
+            </span>
+          </li>
+          <li>
+            <span class="factor-num">03</span>
+            <span class="factor-text">
+              <strong>Carências nutricionais específicas</strong>
+              O hidratante externo previne o ressecamento, mas não impede as estrias sozinho. Para evitar o rompimento da pele na gestação, o corpo precisa de nutrientes específicos para produzir colágeno resistente de dentro para fora.
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal reveal-d1">
+        <div class="curiosity-box">
+          <p>"Se o meu óleo de amêndoas é tão bom, por que tantas mães que usam ainda têm estrias?"</p>
+          <p>Porque nenhum produto aplicado por fora consegue reparar um tecido que está sendo destruído por dentro. A hidratação tópica é aliada, mas nunca suficiente sozinha.</p>
+        </div>
+
+        <div class="curiosity-box" style="margin-top:20px;">
+          <p>"E a genética? Não é tudo culpa da genética?"</p>
+          <p>Parcialmente. A genética define a sua <em>predisposição</em>, mas as suas escolhas diárias definem o quanto essa predisposição vai se expressar. Isso é epigenética: o seu comportamento fala mais alto que o seu DNA.</p>
+        </div>
+
+        <!-- imagem gestante minimalista -->
+        <div class="img-ph-gestante" style="aspect-ratio:3/2; margin-top:20px;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M7 20a5 5 0 0110 0"/></svg>
+          <span>Foto Aesthetic — Gestante</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  4. AUTORIDADE
+════════════════════════════════════════ -->
+<section class="sec" aria-labelledby="authority-name">
+  <div class="wrap wrap--lg">
+    <div class="authority-wrap">
+
+      <div class="authority-photo-ph reveal" aria-label="Espaço para foto de Nicole Carvalho">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.7" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+        <span>Foto de Nicole<br/>Carvalho</span>
+      </div>
+
+      <div class="authority-text reveal reveal-d1">
+        <span class="kicker">Quem criou o PROSKIN</span>
+        <h2 class="authority-name" id="authority-name">Nicole Carvalho</h2>
+        <span class="authority-role">Biomédica Especialista em Estética e Saúde Integrativa</span>
+        <span class="authority-cred">Formada pela UFJ — Universidade Federal de Jataí · CRBM 26343</span>
+        <div class="rule rule--left"></div>
+
+        <p>Trabalho na interseção entre a medicina integrativa e a estética regenerativa. Ao longo de anos de clínica, percebi que a maioria das orientações dadas às gestantes sobre cuidado com a pele é superficial — quando não é diretamente equivocada.</p>
+        <p>A indústria de cosméticos investe muito em marketing e pouco em educar de verdade. Vi mães que usaram os produtos mais caros do mercado e ainda assim desenvolveram marcas profundas — enquanto outras, com uma abordagem interna consistente, chegaram ao final da gravidez com a pele íntegra.</p>
+        <p>O PROSKIN nasce dessa observação clínica. É o que eu ensinaria à minha própria paciente em consulta — traduzido de forma simples, prática e acessível para qualquer mãe.</p>
+
+        <div class="badge-row">
+          <span class="badge">Biomédica · UFJ</span>
+          <span class="badge">Estética Integrativa</span>
+          <span class="badge">+100 Pacientes</span>
+          <span class="badge">CRBM 26343</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  5. DOSSIÊ — Curiosidade e Perguntas
+════════════════════════════════════════ -->
+<section class="sec sec--warm" aria-labelledby="dossie-title">
+  <div class="wrap">
+
+    <div class="dossie-intro reveal">
+      <span class="kicker">O Dossiê das Estrias</span>
+      <h2 id="dossie-title">As perguntas que toda grávida deveria fazer — e poucas conseguem responder.</h2>
+      <div class="rule"></div>
+      <p style="font-size:.97rem;">Clique em cada pergunta para descobrir o que a maioria das pessoas ainda não sabe. Estas respostas estão no PROSKIN em detalhe.</p>
+    </div>
+
+    <div class="questions-grid" role="list">
+
+      <article class="q-card reveal" role="listitem">
+        <span class="q-card-toggle" aria-hidden="true">+</span>
+        <div class="q-card-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>Por que os cremes famosos falham — mesmo sendo caros?</h3>
+        <p>A maioria atua apenas na camada mais superficial da pele, que é só a "casca". A estria se forma nas camadas mais profundas, onde nenhum creme comum chega.</p>
+        <div class="reveal-answer">
+          O colágeno que mantém a firmeza da pele está na <strong>derme</strong> — uma camada que produtos tópicos dificilmente penetram com profundidade suficiente. Para protegê-la de verdade, é preciso agir por dentro: alimentação, suplementação e hábitos que estimulem a produção de colágeno saudável de forma natural.
+        </div>
+      </article>
+
+      <article class="q-card reveal reveal-d1" role="listitem">
+        <span class="q-card-toggle" aria-hidden="true">+</span>
+        <div class="q-card-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Como uma estria realmente se forma no corpo?</h3>
+        <p>Não é só a pele esticando. É uma sequência de eventos internos que começa bem antes da barriga crescer.</p>
+        <div class="reveal-answer">
+          Quando as fibras de colágeno e elastina — que dão sustentação e elasticidade à pele — são enfraquecidas por inflamação, falta de nutrientes ou hormônios em desequilíbrio, elas perdem a capacidade de acompanhar o crescimento. O resultado é o rompimento dérmico que chamamos de estria. Pele hidratada por fora, mas frágil por dentro, rompe do mesmo jeito.
+        </div>
+      </article>
+
+      <article class="q-card reveal" role="listitem">
+        <span class="q-card-toggle" aria-hidden="true">+</span>
+        <div class="q-card-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 5v7"/></svg>
+        </div>
+        <h3>A genética realmente decide tudo?</h3>
+        <p>Se a sua mãe teve estrias, você necessariamente terá? A resposta é mais complexa — e mais animadora — do que parece.</p>
+        <div class="reveal-answer">
+          A genética define a sua <em>tendência</em> — não o seu destino. A ciência da epigenética mostra que os nossos hábitos podem "ligar" ou "desligar" a expressão de genes. Ou seja: mesmo com predisposição genética, uma rotina anti-inflamatória consistente pode reduzir drasticamente a probabilidade de aparecimento das marcas.
+        </div>
+      </article>
+
+      <article class="q-card reveal reveal-d1" role="listitem">
+        <span class="q-card-toggle" aria-hidden="true">+</span>
+        <div class="q-card-icon" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>Existe algum cosmético que realmente funciona para gestantes?</h3>
+        <p>Sim — mas a maioria dos produtos que circulam na internet não está nessa lista.</p>
+        <div class="reveal-answer">
+          Existem ingredientes seguros, testados e com ação real na melhora da qualidade da pele durante a gestação. O problema é que muitos produtos populares contêm substâncias que interferem no equilíbrio hormonal da mãe e do bebê — os chamados xenobióticos. No PROSKIN, você recebe uma lista clara do que usar, o que evitar e como montar uma rotina cosmética limpa e eficaz.
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  6. SOLUÇÃO — O GUIA PROSKIN
+════════════════════════════════════════ -->
+<section class="sec ebook-section" aria-labelledby="solution-title">
+  <div class="wrap wrap--lg">
+
+    <div class="text-center reveal" style="margin-bottom:0;">
+      <span class="kicker">A Solução</span>
+      <h2 id="solution-title" style="font-size:clamp(1.8rem,4vw,3rem);">Torne-se a maior especialista<br/>da sua própria pele.</h2>
+      <div class="rule"></div>
+      <p style="max-width:540px; margin:0 auto; font-size:.97rem;">O PROSKIN não é mais um guia de produtos. É um ritual materno baseado na saúde integrativa — prático, simples e gostoso de seguir.</p>
+    </div>
+
+    <div class="ebook-grid">
+
+      <!-- CAPA 3D -->
+      <div class="ebook-cover reveal">
+        <div class="ebook-3d-wrap">
+          <div class="ebook-spine" aria-hidden="true"></div>
+          <div class="ebook-face">
+            <div class="ebook-face-inner">
+              <span class="ebook-tag">Guia Prático</span>
+              <div class="ebook-face-deco"></div>
+              <h3>PROSKIN</h3>
+              <div class="ebook-face-deco"></div>
+              <p>Prevenção Integrativa<br/>de Estrias na Gestação</p>
+              <div class="ebook-face-deco" style="margin-top:20px;"></div>
+              <p style="font-size:.72rem; color:rgba(212,191,160,.4); margin-top:8px;">Nicole Carvalho · Biomédica</p>
+            </div>
+          </div>
+          <div class="ebook-badge">
+            <span>por</span>
+            <span>R$39</span>
+          </div>
+        </div>
+
+        <!-- Bonus box -->
+        <div class="bonus-box" style="margin-top:36px;">
+          <h4>🎁 Bónus Exclusivo Incluído</h4>
+          <p><strong style="color:var(--c-gold-lt);">Guia Inteligente de Homecare Corporal</strong> — a ordem certa e a estratégia de uso dos cosméticos, passo a passo, para que cada produto funcione ao máximo.</p>
+        </div>
+      </div>
+
+      <!-- CONTEÚDO -->
+      <div class="reveal reveal-d1">
+        <span class="kicker">O que você vai aprender</span>
+        <ul class="content-list">
+          <li class="content-item">
+            <span class="content-num">01</span>
+            <div class="content-body">
+              <strong>A Dieta do Colágeno</strong>
+              <span>O que colocar no prato para fortalecer as fibras da sua pele por dentro. Simples, acessível, sem dietas malucas.</span>
+            </div>
+          </li>
+          <li class="content-item">
+            <span class="content-num">02</span>
+            <div class="content-body">
+              <strong>Hábitos que destroem o colágeno sem você saber</strong>
+              <span>Atitudes do dia a dia que parecem inofensivas mas enfraquecem a sua pele silenciosamente. Você vai se surpreender.</span>
+            </div>
+          </li>
+          <li class="content-item">
+            <span class="content-num">03</span>
+            <div class="content-body">
+              <strong>Cosmetologia Limpa para Gestantes</strong>
+              <span>Como identificar e evitar os ingredientes que prejudicam você e o bebê — e o que realmente funciona no lugar.</span>
+            </div>
+          </li>
+          <li class="content-item">
+            <span class="content-num">04</span>
+            <div class="content-body">
+              <strong>A Rotina Diária Integrativa</strong>
+              <span>Um passo a passo que cabe na sua rotina de grávida — prático, agradável e com base científica real.</span>
+            </div>
+          </li>
+          <li class="content-item">
+            <span class="content-num">05</span>
+            <div class="content-body">
+              <strong>O Checklist do Ritual Diário</strong>
+              <span>Para colar na porta da geladeira. Tudo o que você precisa fazer — de forma visual e rápida.</span>
+            </div>
+          </li>
+        </ul>
+
+        <!-- imagem aesthetic -->
+        <div class="img-ph-gestante" style="margin-top:28px; aspect-ratio:16/7;">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><ellipse cx="12" cy="18" rx="6" ry="3"/></svg>
+          <span>Imagem Aesthetic — Maternidade</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  7. PARA QUEM É / NÃO É
+════════════════════════════════════════ -->
+<section class="sec sec--warm" aria-labelledby="who-title">
+  <div class="wrap">
+
+    <div class="text-center reveal">
+      <span class="kicker">Seja honesta consigo mesma</span>
+      <h2 id="who-title" style="font-size:clamp(1.6rem,3.5vw,2.6rem);">Este guia foi pensado para<br/>a mãe certa.</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="who-grid">
+
+      <article class="who-card who-card--no reveal" aria-label="Para quem não é o PROSKIN">
+        <div class="who-card-head">
+          <div class="who-card-ico">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8B6347" stroke-width="2.5" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          Não é para você se…
+        </div>
+        <ul class="who-list">
+          <li><span class="mk">×</span> Busca resultados sem nenhuma mudança de hábito.</li>
+          <li><span class="mk">×</span> Quer dicas genéricas que já encontrou em qualquer blog ou influencer.</li>
+          <li><span class="mk">×</span> Não está disposta a dedicar nem 10 minutos por dia ao próprio cuidado.</li>
+          <li><span class="mk">×</span> Espera uma "receita de bolo" que funcione sem envolvimento pessoal.</li>
+        </ul>
+      </article>
+
+      <article class="who-card who-card--yes reveal reveal-d1" aria-label="Para quem é o PROSKIN">
+        <div class="who-card-head">
+          <div class="who-card-ico">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#5C7A5A" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          É para você se…
+        </div>
+        <ul class="who-list">
+          <li><span class="mk">✓</span> Você quer entender o que está acontecendo no seu corpo — de verdade.</li>
+          <li><span class="mk">✓</span> Já tentou vários produtos e quer saber por que eles não funcionaram.</li>
+          <li><span class="mk">✓</span> Está disposta a adotar pequenos hábitos com impacto real.</li>
+          <li><span class="mk">✓</span> Quer chegar ao final da gravidez tendo feito tudo o que estava ao seu alcance.</li>
+          <li><span class="mk">✓</span> Entende que constância vale mais do que qualquer produto milagroso.</li>
+        </ul>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+  8. OFERTA — MÊS DAS MÃES
+════════════════════════════════════════ -->
+<section class="sec offer-sec" aria-labelledby="offer-title">
+  <div class="wrap">
+
+    <div class="text-center reveal" style="margin-bottom:40px;">
+      <span class="kicker" style="color:var(--c-gold-lt);">Mês das Mães</span>
+      <h2 id="offer-title" style="font-size:clamp(1.5rem,3.5vw,2.2rem); color:var(--c-cream);">O conhecimento clínico que<br/>mudará a sua gestação.</h2>
+    </div>
+
+    <div class="offer-card reveal">
+      <span class="offer-pill">✦ Oferta Especial · Mês das Mães ✦</span>
+
+      <h2>PROSKIN — Acesso Completo</h2>
+      <p>Anos de estudo, prática clínica e pesquisa — reunidos num guia prático que qualquer mãe consegue seguir. Conteúdo que, em consulta individual, custaria dezenas de vezes mais.</p>
+
+      <div>
+        <span class="price-from">De R$ 197,00</span>
+        <span class="price-main">R$ 39,90</span>
+        <span class="price-note">Acesso vitalício · Disponível imediatamente</span>
+      </div>
+
+      <a href="[INSERIR_LINK_AQUI]" class="btn btn--lg" aria-label="Comprar PROSKIN por R$ 39,90">
+        QUERO PROTEGER A MINHA PELE POR R$ 39,90
+      </a>
+
+      <div class="scarcity">
+        <span class="scarcity-dot" aria-hidden="true"></span>
+        Vagas com valor promocional. O preço subirá em breve.
+      </div>
+
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Compra Segura
+        </span>
+        <span class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Seguro para Gestantes
+        </span>
+        <span class="trust-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Acesso Imediato
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════════════════════════════════
+  9. DISCLAIMER
+════════════════════════════════════════ -->
+<aside class="disclaimer" role="note" aria-label="Aviso Legal">
+  <div class="wrap wrap--sm">
+    <p><strong>Aviso importante:</strong> Este material tem caráter educativo e informativo. A saúde integrativa atua na otimização e minimização drástica dos riscos, porém cada organismo é único e responde de forma individual. Não existem garantias absolutas em tratamentos de saúde e estética. Este guia não substitui o acompanhamento médico pré-natal.</p>
+  </div>
+</aside>
+
+<!-- ════════════════════════════════════════
+  10. FOOTER
+════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-in">
+    <div class="footer-brand">
+      <p>PROSKIN</p>
+      <p>Prevenção Integrativa na Gestação</p>
+    </div>
+    <address class="footer-legal" style="font-style:normal;">
+      <p>CNPJ: 610.960.840/0001-01</p>
+      <small>© 2026 Nicole Carvalho · Todos os direitos reservados.</small>
+    </address>
+    <div class="footer-right">
+      <p>Nicole Carvalho · Biomédica · CRBM 26343</p>
+      <p>Estética Integrativa &amp; Avançada</p>
+    </div>
+  </div>
+  <div class="footer-rule"></div>
+  <p class="footer-bottom">PROSKIN é um produto digital informativo. Este site não é afiliado a nenhuma plataforma de mídia social.</p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Reveal on scroll ── */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('on');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('on'); });
+  }
+
+  /* Hero elementos entram imediatamente */
+  setTimeout(function () {
+    document.querySelectorAll('.hero .reveal').forEach(function (el, i) {
+      setTimeout(function () { el.classList.add('on'); }, i * 160);
+    });
+  }, 80);
+
+  /* ── Accordion Q-cards ── */
+  document.querySelectorAll('.q-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var isOpen = card.classList.contains('open');
+      document.querySelectorAll('.q-card').forEach(function (c) { c.classList.remove('open'); });
+      if (!isOpen) card.classList.add('open');
+    });
+  });
+
+  /* ── Counter animation ── */
+  function animateCount(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var duration = 1400;
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(ease * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var countEls = document.querySelectorAll('.count-val');
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          cio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    countEls.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* ── 3D ebook tilt on mouse (desktop only) ── */
+  var wrap = document.querySelector('.ebook-3d-wrap');
+  if (wrap && window.matchMedia('(hover: hover)').matches) {
+    wrap.addEventListener('mousemove', function (e) {
+      var r = wrap.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top)  / r.height - 0.5;
+      wrap.style.transform =
+        'perspective(900px) rotateY(' + (-12 + x * 14) + 'deg) rotateX(' + (-3 - y * 8) + 'deg)';
+    });
+    wrap.addEventListener('mouseleave', function () {
+      wrap.style.transform = 'perspective(900px) rotateY(-12deg) rotateX(3deg)';
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
